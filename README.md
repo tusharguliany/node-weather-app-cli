@@ -5,4 +5,4 @@ weather app from nodejs tutorial @udemy
 
 
 ### working example for command
-`node app.js weather --location="your location here"
+```node app.js weather --location="your location here"```
