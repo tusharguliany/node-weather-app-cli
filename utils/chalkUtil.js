@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 
+const inverse = chalk.inverse.bold;
 const error = chalk.bgRed.white.bold;
 const warning = chalk.bgYellow.black.bold;
 const success = chalk.bgGreen.black;
@@ -9,5 +10,6 @@ module.exports = {
     error: error,
     warning: warning,
     success: success,
-    primary: primary
+    primary: primary,
+    inverse: inverse
 }
