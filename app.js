@@ -2,6 +2,7 @@ const yargs = require('yargs');
 const { primary, success, error, warning, inverse } = require('./utils/chalkUtil');
 const {geocode} = require('./utils/geocode');
 const {forecast} = require('./utils/forecast');
+console.log('Hello World');
 
 yargs.command({
     command: 'weather',
