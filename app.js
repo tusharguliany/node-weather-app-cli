@@ -2,6 +2,7 @@ const yargs = require('yargs');
 const { primary, success, error, warning, inverse } = require('./utils/chalkUtil');
 const {geocode} = require('./utils/geocode');
 const {forecast} = require('./utils/forecast');
+console.log('Hello World');
 
 yargs.command({
     command: 'weather',
@@ -17,19 +18,19 @@ yargs.command({
         if (argv.location === undefined || argv.location ==='') {
             return console.log(error('you need to provide a valid location.'));
         }
-        geocode(argv.location, (err, data) => {
+        geocode(argv.location, (err, {longitude, latitude, placeName} = {}) => {
             if (err) {
                 return console.log(error(err));
             } else {
-                const longitude = data.longitude;
-                const latitude = data.latitude;
-                const placeName = data.placeName;
-                forecast(longitude,latitude, (err, forecastData) => {
+                forecast(longitude,latitude, (err, {timezone, weather, temperature, feelslike} = {}) => {
                     if (err) {
                         return console.log(error(e));
                     } else {
-                        forecastData.placeName = placeName;
-                        console.log(forecastData);
+                        console.log(`Place : ${success.inverse(placeName)}`);
+                        console.log(`Time Zone : ${success.inverse(timezone)}`);
+                        console.log(`Weather : ${success.inverse(weather)}`);
+                        console.log(`Temperature : ${success.inverse(temperature)}`);
+                        console.log(`Feels Like : ${success.inverse(feelslike)}`);
                     }
                 });
             }
