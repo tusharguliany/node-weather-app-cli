@@ -1,5 +1,5 @@
 # weather-app
-weather app from nodejs tutorial @udemy
+weather app with terminal use from nodejs tutorial @udemy
 
 ## used
 * yargs
