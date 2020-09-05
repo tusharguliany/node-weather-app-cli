@@ -1,4 +1,4 @@
-# weather-app
+# Weather App
 weather app with terminal use from nodejs tutorial @udemy
 
 ## used
